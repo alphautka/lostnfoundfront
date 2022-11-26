@@ -1,0 +1,6 @@
+@import 'styles/design';
+
+.App {
+	text-align: center;
+	@include flex-col;
+}

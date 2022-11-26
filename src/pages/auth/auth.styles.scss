@@ -1,0 +1,103 @@
+@import 'styles/design';
+
+.auth-page {
+	@include flex-row;
+	width: 100vw;
+	gap: 1rem;
+
+	.auth-image {
+		flex: 1;
+		height: 100vh;
+		// background: #FFD300;
+
+		> img {
+			width: 100vh;
+			height: 100vh;
+		}
+	}
+
+	.auth-form {
+		flex: 1;
+		@include flex-col;
+		height: 100vh;
+		gap: 1.2rem;
+
+		.auth-header {
+			h2, h4, h5 {
+				letter-spacing: -0.05rem;
+				font-weight: 400;
+				margin: 1rem 0;
+			}
+
+			.app-title {
+				position: absolute;
+				top: 0.3rem;
+				left: 2rem;
+				color: #FFD300;
+			}
+
+			.auth-title {
+				@include flex-row;
+				gap: 0.6rem;
+
+				h2:nth-of-type(1) {
+					color: #666666;
+				}
+				h2:nth-of-type(2) {
+					color: #FFD300;
+				}
+			}
+		}
+
+		.auth-input {
+			@include flex-col;
+			width: 64%;
+			gap: 1rem;
+
+			input {
+				border: none;
+				padding: 0.8rem 1.5rem;
+				border-radius: 100px;
+				background: whitesmoke;
+			}
+
+			.ant-checkbox-wrapper {
+				.ant-checkbox-inner:hover {
+					border-color: #FFD300;
+				}
+			
+				> .ant-checkbox-checked > .ant-checkbox-inner {
+					border-color: #FFD300;
+					background-color: #FFD300;
+				}
+			}
+		}
+
+		.auth-buttons {
+			@include flex-row;
+			@include flex-col;
+			width: 80%;
+			gap: 1rem;
+			justify-content: space-between;
+
+			button {
+				height: auto;
+				padding: 0.7rem 0;
+				width: 80%;
+				border: none;
+				font-weight: 600;
+				border-radius: 100px;
+
+				&.btn-submit {
+					color: #FAFAFA;
+					background: #FFD300;
+				}
+
+				&.btn-cancel {
+					color: #777;
+					background: whitesmoke;
+				}
+			}
+		}
+	}
+}
