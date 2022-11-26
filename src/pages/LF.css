@@ -1,0 +1,13 @@
+.AddButton {
+  display: flex;
+  justify-content: flex-end;
+}
+.Global {
+  margin: 10px;
+}
+.Items {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
