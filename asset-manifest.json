@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/lostnfoundfront/static/css/main.42c41815.css",
+    "main.js": "/lostnfoundfront/static/js/main.1f3ac125.js",
+    "static/js/787.066863b2.chunk.js": "/lostnfoundfront/static/js/787.066863b2.chunk.js",
+    "static/media/auth-image.jpg": "/lostnfoundfront/static/media/auth-image.23298f63869e849c9b6a.jpg",
+    "index.html": "/lostnfoundfront/index.html",
+    "main.42c41815.css.map": "/lostnfoundfront/static/css/main.42c41815.css.map",
+    "main.1f3ac125.js.map": "/lostnfoundfront/static/js/main.1f3ac125.js.map",
+    "787.066863b2.chunk.js.map": "/lostnfoundfront/static/js/787.066863b2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42c41815.css",
+    "static/js/main.1f3ac125.js"
+  ]
+}
