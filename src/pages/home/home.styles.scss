@@ -1,0 +1,33 @@
+@import 'styles/design';
+
+
+.home-page {
+	@include flex-row;
+	width: 100vw;
+	height: 100vh;
+	// background-image: url('../../assets/auth-image.jpg') ;
+
+	.home-image {
+		flex: 1;
+		height: 100vh;
+	}
+
+	.home-menu {
+		@include flex-col;
+		flex: 1;
+
+		.app-logo {
+			width: 512px;
+		}
+		
+		.home-options {
+			@include flex-row;
+			gap: 2rem;
+			width: 64%;
+			
+			button {
+				@include btn-main;
+			}
+		}
+	}
+}

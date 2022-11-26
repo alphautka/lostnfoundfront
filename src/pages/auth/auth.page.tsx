@@ -7,8 +7,14 @@ import { useEffect, useState } from 'react';
 
 const { Title } = Typography;
 
+let authURL = 'https://lostnfoundbackend-production.up.railway.app/login';
 
-const AuthPage = () => {
+
+type Props = {
+	onAuth: ( auth: boolean ) => void,
+};
+
+const AuthPage = ({ onAuth }: Props ) => {
 
 	const [ authData, setAuthData ] = useState({
 		name		: ''	,
@@ -22,12 +28,12 @@ const AuthPage = () => {
 	const [ password, setPassword ] = useState('');
 	const [ remember, setNRemember ] = useState( false );
 
-	const submitAuthData = () => {
+	async function submitAuthData () {
 		let errors: string[] = [];
 
-		if ( name === '' ) 		errors.push('Invalid or empty name'	);
-		if ( email === '' ) 	errors.push('Invalid or empty email');
-		if ( password === '' ) 	errors.push('Invalid password'		);
+		if ( name		=== '' ) errors.push('Invalid or empty name'	);
+		if ( email		=== '' ) errors.push('Invalid or empty email'	);
+		if ( password	=== '' ) errors.push('Invalid password'			);
 	
 		if ( errors.length > 0 ) {
 			alert( errors.join('\n') );
@@ -40,7 +46,21 @@ const AuthPage = () => {
 				remember	: remember	,
 			});
 
-			console.log( authData );
+			let requestBody = {
+				username: authData.name		,
+				password: authData.password	,
+			};
+
+			await fetch( authURL, {
+				'method'	: 'POST',
+				'body'		: JSON.stringify( requestBody ),
+				'headers'	: { 'Content-Type': 'application/json' },
+
+			}).then( r => {
+				( r.status === 200 )
+				? onAuth( true )
+				: alert('Wrong password or User not existant') ;
+			});
 		};
 	};
 
@@ -92,7 +112,7 @@ const AuthPage = () => {
 				<div className={'auth-buttons'}>
 
 					<Button className={'btn-submit'}
-						onMouseDown={ () => submitAuthData() }
+						onMouseDown={ submitAuthData }
 					> {'Login'} </Button>
 
 					<Button className={'btn-cancel'}> {'Sign Up'}	</Button>

@@ -41,3 +41,16 @@
 	$sh-03	: #00000032	;
 
 // --------- roduct Manager - Colors -------- //
+
+@mixin btn-main {
+	
+	height: auto;
+	padding: 0.7rem 0;
+	width: 80%;
+	border: none;
+	font-weight: 600;
+	border-radius: 100px;
+
+	color: #FAFAFA;
+	background: #FFD300;
+}
